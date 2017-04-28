@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+    <link rel="stylesheet" href="css/wi-feedback.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.wi-feedback.js"></script>
+</head>
+
+<body>
+
+    <script>
+        $(document).ready(function() {
+            $('#popup1').wiFeedBack({
+                fbScript: 'blocks/wi-feedback.php',
+                fbLink: '.wi-fb-link1',
+                fbDelegate: true,
+                fbColor: 'green'
+            });
+            $('#popup2').wiFeedBack({
+                fbScript: 'blocks/wi-feedback.php',
+                fbLink: '.wi-fb-link2',
+                fbColor: 'red'
+            });
+        });
+
+    </script>
+
+    <a href="#popup1" class="wi-fb-link1" data-wi-fb-info="Кнопка 1">Клик 1!</a>
+    <a href="#popup2" class="wi-fb-link2" data-wi-fb-info="Кнопка 2">Клик 2!</a>
+
+    <div style="display:none">
+        <div id="popup1">
+            <h2>Заказать консультацию 1</h2>
+            <h3>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</h3>
+            <input type="text" name="name" maxlength="50" data-wi-fb-caption="Имя" placeholder="Ваше Имя..." />
+            <input type="tel" name="phone" maxlength="50" data-wi-fb-caption="Телефон" placeholder="Ваш Телефон..." required />
+            <input type="email" name="email" maxlength="50" data-wi-fb-caption="Почта" placeholder="Ваш E-mail..." />
+            <textarea name="message" maxlength="500" data-wi-fb-caption="Сообщение" placeholder="Сообщение..."></textarea>
+            <button>Перезвоните мне</button>
+        </div>
+    </div>
+
+    <div style="display:none">
+        <div id="popup2">
+            <h2>Заказать консультацию 2</h2>
+            <h3>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</h3>
+            <input type="text" name="name" maxlength="50" data-wi-fb-caption="Имя" placeholder="Ваше Имя..." />
+            <input type="tel" name="phone" maxlength="50" data-wi-fb-caption="Телефон" placeholder="Ваш Телефон..." required />
+            <input type="email" name="email" maxlength="50" data-wi-fb-caption="Почта" placeholder="Ваш E-mail..." />
+            <textarea name="message" maxlength="500" data-wi-fb-caption="Сообщение" placeholder="Сообщение..."></textarea>
+            <button>Перезвоните мне</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
