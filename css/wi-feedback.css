@@ -145,10 +145,10 @@
 
 /* Форма не прошла валидацию */
 
-.wi-fb.invalid .wi-fb-line input:invalid,
-.wi-fb.invalid .wi-fb-line select:invalid,
-.wi-fb.invalid .wi-fb-line textarea:invalid {
-    background-color: #f2dede;
+.wi-fb.invalid input:invalid,
+.wi-fb.invalid select:invalid,
+.wi-fb.invalid textarea:invalid {
+    background-color: #f2dede !important;
 }
 
 .wi-fb.invalid .wi-fb-msg-invalid {

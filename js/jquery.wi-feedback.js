@@ -13,7 +13,8 @@
                     fbDelegate: false,
                     fbBeforeOpen: null,
                     fbBeforeClose: null,
-                    fbColor: '#00aff0'
+                    fbColor: '#00aff0',
+                    fbTheme: true
                 }, options),
                 fbFieldInfo;
 
@@ -27,17 +28,21 @@
             // Элементы
 
             fb.addClass('wi-fb wi-fb-' + fbID).attr('wi-fb-id', fbID);
-            fb.find('h2').wrap('<div class="wi-fb-title"></div>');
-            fb.find('h3').wrap('<div class="wi-fb-text"></div>');
-            fb.find('input, select, textarea').wrap('<div class="wi-fb-line"></div>');
-            fb.find('input, select, textarea').each(function () {
-                var label = $(this).attr('data-wi-fb-label');
-                if (label != '' && typeof (label) != 'undefined') {
-                    $(this).parent().prepend('<label>' + label + '</label>');
-                    if ($(this).prop('required')) $(this).parent().find('label').append('<span> *</span>');
-                }
-            });
-            fb.find('button').wrap('<div class="wi-fb-btn"></div>');
+
+            if (fbOpt.fbTheme) {
+                fb.find('h2').wrap('<div class="wi-fb-title"></div>');
+                fb.find('h3').wrap('<div class="wi-fb-text"></div>');
+                fb.find('input, select, textarea').wrap('<div class="wi-fb-line"></div>');
+                fb.find('input, select, textarea').each(function () {
+                    var label = $(this).attr('data-wi-fb-label');
+                    if (label != '' && typeof (label) != 'undefined') {
+                        $(this).parent().prepend('<label>' + label + '</label>');
+                        if ($(this).prop('required')) $(this).parent().find('label').append('<span> *</span>');
+                    }
+                });
+                fb.find('button').wrap('<div class="wi-fb-btn"></div>');
+            }
+
             if (/ru/i.test($('html').attr('lang'))) {
                 fb.append('<div class="wi-fb-spinner"></div><div class="wi-fb-msg-invalid">Отмеченные поля заполнены некорректно</div><div class="wi-fb-msg-sending">Идет отправка данных...</div><div class="wi-fb-msg-sent">Ваша заявка принята!</div><div class="wi-fb-msg-notsent">При отправке данных произошла ошибка</div>');
             } else {
@@ -48,7 +53,7 @@
 
             // Отправка данных
 
-            fb.find('.wi-fb-btn button').on('click', function () {
+            fb.find('.wi-fb-btn button, .wi-fb-send').on('click', function () {
 
                 fb.removeClass('invalid sent notsent');
 
