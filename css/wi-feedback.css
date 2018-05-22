@@ -28,7 +28,8 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
-.wi-fb .wi-fb-title h2 {
+.wi-fb .wi-fb-title h2,
+.wi-fb .wi-fb-title .h2 {
     margin: 0;
     padding: 0;
     font-size: 2em;
@@ -41,7 +42,8 @@
     padding: 0;
 }
 
-.wi-fb .wi-fb-text h3 {
+.wi-fb .wi-fb-text h3,
+.wi-fb .wi-fb-text .h3 {
     margin: 0;
     padding: 0;
     font-size: 1.5em;

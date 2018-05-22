@@ -22,7 +22,7 @@
             // CSS
 
             if (fbOpt.fbColor) {
-                $('head').append('<style wi-fb-id="' + fbID + '">.wi-fb-' + fbID + ' .wi-fb-msg-sending,.wi-fb-' + fbID + ' .wi-fb-msg-sent,.wi-fb-' + fbID + ' .wi-fb-title h2{color:' + fbOpt.fbColor + '}.wi-fb-' + fbID + ' .wi-fb-btn button{background:' + fbOpt.fbColor + '}</style>');
+                $('head').append('<style wi-fb-id="' + fbID + '">.wi-fb-' + fbID + ' .wi-fb-msg-sending,.wi-fb-' + fbID + ' .wi-fb-msg-sent,.wi-fb-' + fbID + ' .wi-fb-title h2,.wi-fb-' + fbID + ' .wi-fb-title .h2{color:' + fbOpt.fbColor + '}.wi-fb-' + fbID + ' .wi-fb-btn button{background:' + fbOpt.fbColor + '}</style>');
             }
 
             // Элементы
@@ -30,8 +30,8 @@
             fb.addClass('wi-fb wi-fb-' + fbID).attr('wi-fb-id', fbID);
 
             if (fbOpt.fbTheme) {
-                fb.find('h2').wrap('<div class="wi-fb-title"></div>');
-                fb.find('h3').wrap('<div class="wi-fb-text"></div>');
+                fb.find('h2, .h2').wrap('<div class="wi-fb-title"></div>');
+                fb.find('h3, .h3').wrap('<div class="wi-fb-text"></div>');
                 fb.find('input, select, textarea').wrap('<div class="wi-fb-line"></div>');
                 fb.find('input, select, textarea').each(function () {
                     var label = $(this).attr('data-wi-fb-label');
