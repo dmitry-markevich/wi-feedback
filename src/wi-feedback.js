@@ -10,7 +10,6 @@
                 fbOpt = $.extend({
                     fbScript: '/wi-feedback.php',
                     fbLink: '.wi-fb-link',
-                    fbDelegate: false,
                     fbBeforeOpen: null,
                     fbBeforeClose: null,
                     fbColor: '#00aff0',
@@ -121,26 +120,25 @@
 
                 fb.addClass('wi-fb-modal');
 
-                var mfpOpt = {};
-
-                if (fbOpt.fbDelegate) mfpOpt.delegate = fbOpt.fbLink;
-                mfpOpt.type = 'inline';
-                mfpOpt.callbacks = {};
-                mfpOpt.fixedContentPos = true;
-                mfpOpt.mainClass = 'mfp-fade';
-                mfpOpt.removalDelay = 300;
+                var mfpOpt = {
+                    items: {
+                        src: fb,
+                        type: 'inline'
+                    },
+                    removalDelay: 300,
+                    mainClass: 'mfp-fade',
+                    fixedContentPos: true,
+                    callbacks: {}
+                }
 
                 if (typeof (fbOpt.fbBeforeOpen) == 'function') mfpOpt.callbacks.open = fbOpt.fbBeforeOpen;
                 if (typeof (fbOpt.fbBeforeClose) == 'function') mfpOpt.callbacks.close = fbOpt.fbBeforeClose;
 
-                if (fbOpt.fbDelegate) $('body').magnificPopup(mfpOpt);
-                else $(fbOpt.fbLink).magnificPopup(mfpOpt);
-
-                // Дополнительные атрибуты сслок
-
-                $('body').on('click', fbOpt.fbLink, function () {
+                $('body').on('click', fbOpt.fbLink, function (e) {
+                    e.preventDefault();
                     fb.removeClass('sent notsent');
                     fbFieldInfo = $(this).attr('data-wi-fb-info') || $(this).attr('wi-fb-info') || '';
+                    $.magnificPopup.open(mfpOpt);
                 });
             }
 

@@ -18,7 +18,7 @@
     font-size: 3em;
 }
 
-.wi-fb>* {
+.wi-fb > * {
     text-align: center;
 }
 
@@ -60,6 +60,7 @@
 .wi-fb .wi-fb-line select,
 .wi-fb .wi-fb-line textarea {
     display: inline-block;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 90%;
     max-width: 300px;
@@ -84,6 +85,7 @@
 
 .wi-fb .wi-fb-btn button {
     display: inline-block;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 90%;
     max-width: 200px;
