@@ -1,29 +1,30 @@
 {
-    "name": "wi-feedback",
-    "version": "0.3.0",
-    "description": "Feedback Form",
-    "main": "demo/index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/dmitry-markevich/wi-feedback.git"
-    },
-    "keywords": [
+  "name": "wi-feedback",
+  "version": "0.3.006",
+  "description": "Feedback Form",
+  "main": "demo/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitry-markevich/wi-feedback.git"
+  },
+  "keywords": [
     "feedback"
   ],
-    "author": "Webinsight",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/dmitry-markevich/wi-feedback/issues"
-    },
-    "homepage": "https://github.com/dmitry-markevich/wi-feedback#readme",
-    "devDependencies": {
-        "grunt": "^1.0.3",
-        "grunt-contrib-concat": "^1.0.1",
-        "grunt-contrib-cssmin": "^3.0.0",
-        "grunt-contrib-uglify": "^4.0.0",
-        "grunt-contrib-watch": "^1.1.0"
-    }
+  "author": "Webinsight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitry-markevich/wi-feedback/issues"
+  },
+  "homepage": "https://github.com/dmitry-markevich/wi-feedback#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
 }

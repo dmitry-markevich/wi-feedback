@@ -1,9 +1,6 @@
 /* WIFB */
 
-.wi-fb {
-    font-size: 14px;
-    color: #000;
-}
+/* Modal */
 
 .wi-fb-modal {
     position: relative;
@@ -15,106 +12,71 @@
 }
 
 .wi-fb .mfp-close {
-    font-size: 3em;
-}
-
-.wi-fb > * {
-    text-align: center;
-}
-
-.wi-fb .wi-fb-title {
-    margin: 0 0 1.5em 0;
-    padding: 0 0 1em 0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.wi-fb .wi-fb-title h2,
-.wi-fb .wi-fb-title .h2 {
-    margin: 0;
-    padding: 0;
     font-size: 2em;
-    font-weight: normal;
-    color: #00aff0;
+    transition: opacity .25s;
 }
 
-.wi-fb .wi-fb-text {
-    margin: 0 0 1.5em 0;
-    padding: 0;
+/* Animations */
+
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
 }
 
-.wi-fb .wi-fb-text h3,
-.wi-fb .wi-fb-text .h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5em;
-    font-weight: normal;
-    color: #000;
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.8;
 }
 
-.wi-fb .wi-fb-line {
-    margin: 0 0 1em 0;
-    padding: 0;
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
 }
 
-.wi-fb .wi-fb-line input,
-.wi-fb .wi-fb-line select,
-.wi-fb .wi-fb-line textarea {
-    display: inline-block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 90%;
-    max-width: 300px;
-    height: 40px;
-    margin: 0;
-    padding: 4px 10px;
-    border: 1px solid #c0c0c0;
-    border-radius: 0;
-    background: #fff;
-    font-size: 1em;
-    outline: none;
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
 }
 
-.wi-fb .wi-fb-line textarea {
-    height: 120px;
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
 }
 
-.wi-fb .wi-fb-btn {
-    margin: 2em 0 1em 0;
-    padding: 0;
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
 }
 
-.wi-fb .wi-fb-btn button {
-    display: inline-block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 90%;
-    max-width: 200px;
-    margin: 0;
-    padding: 10px 0;
-    border: none;
-    border-radius: 0;
-    background: #00aff0;
-    text-transform: uppercase;
-    font-size: 1em;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    -webkit-transition: background-color .25s;
-    transition: background-color .25s;
+/* Form */
+
+.wi-fb .wi-fb-file label {
+    display: block;
 }
 
-.wi-fb .wi-fb-btn button:hover {
-    background: #444;
+.wi-fb .wi-fb-btn button,
+.wi-fb .wi-fb-btn .button {
+    position: relative;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
-.wi-fb .wi-fb-spinner {
+.wi-fb .wi-fb-btn button:after,
+.wi-fb .wi-fb-btn .button:after {
+    content: '';
+    position: absolute;
+    left: 0.5em;
+    top: calc(50% - 0.5em);
     display: none;
-    width: 2em;
-    height: 2em;
-    margin: 1em auto;
-    padding: 0;
-    background: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01MjYgMTM5NHEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41cS01MiAwLTkwLTM4dC0zOC05MHEwLTUzIDM3LjUtOTAuNXQ5MC41LTM3LjUgOTAuNSAzNy41IDM3LjUgOTAuNXptNDk4IDIwNnEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41LTkwLjUtMzcuNS0zNy41LTkwLjUgMzcuNS05MC41IDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em0tNzA0LTcwNHEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41LTkwLjUtMzcuNS0zNy41LTkwLjUgMzcuNS05MC41IDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em0xMjAyIDQ5OHEwIDUyLTM4IDkwdC05MCAzOHEtNTMgMC05MC41LTM3LjV0LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS05NjQtOTk2cTAgNjYtNDcgMTEzdC0xMTMgNDctMTEzLTQ3LTQ3LTExMyA0Ny0xMTMgMTEzLTQ3IDExMyA0NyA0NyAxMTN6bTExNzAgNDk4cTAgNTMtMzcuNSA5MC41dC05MC41IDM3LjUtOTAuNS0zNy41LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS02NDAtNzA0cTAgODAtNTYgMTM2dC0xMzYgNTYtMTM2LTU2LTU2LTEzNiA1Ni0xMzYgMTM2LTU2IDEzNiA1NiA1NiAxMzZ6bTUzMCAyMDZxMCA5My02NiAxNTguNXQtMTU4IDY1LjVxLTkzIDAtMTU4LjUtNjUuNXQtNjUuNS0xNTguNXEwLTkyIDY1LjUtMTU4dDE1OC41LTY2cTkyIDAgMTU4IDY2dDY2IDE1OHoiLz48L3N2Zz4=') center center no-repeat;
+    width: 1em;
+    height: 1em;
+    background: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC43NSIgZD0iTTUyNiAxMzk0cTAgNTMtMzcuNSA5MC41dC05MC41IDM3LjVxLTUyIDAtOTAtMzh0LTM4LTkwcTAtNTMgMzcuNS05MC41dDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em00OTggMjA2cTAgNTMtMzcuNSA5MC41dC05MC41IDM3LjUtOTAuNS0zNy41LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS03MDQtNzA0cTAgNTMtMzcuNSA5MC41dC05MC41IDM3LjUtOTAuNS0zNy41LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bTEyMDIgNDk4cTAgNTItMzggOTB0LTkwIDM4cS01MyAwLTkwLjUtMzcuNXQtMzcuNS05MC41IDM3LjUtOTAuNSA5MC41LTM3LjUgOTAuNSAzNy41IDM3LjUgOTAuNXptLTk2NC05OTZxMCA2Ni00NyAxMTN0LTExMyA0Ny0xMTMtNDctNDctMTEzIDQ3LTExMyAxMTMtNDcgMTEzIDQ3IDQ3IDExM3ptMTE3MCA0OThxMCA1My0zNy41IDkwLjV0LTkwLjUgMzcuNS05MC41LTM3LjUtMzcuNS05MC41IDM3LjUtOTAuNSA5MC41LTM3LjUgOTAuNSAzNy41IDM3LjUgOTAuNXptLTY0MC03MDRxMCA4MC01NiAxMzZ0LTEzNiA1Ni0xMzYtNTYtNTYtMTM2IDU2LTEzNiAxMzYtNTYgMTM2IDU2IDU2IDEzNnptNTMwIDIwNnEwIDkzLTY2IDE1OC41dC0xNTggNjUuNXEtOTMgMC0xNTguNS02NS41dC02NS41LTE1OC41cTAtOTIgNjUuNS0xNTh0MTU4LjUtNjZxOTIgMCAxNTggNjZ0NjYgMTU4eiIvPjwvc3ZnPg==') center center no-repeat;
     background-size: contain;
+}
+
+.wi-fb.sending .wi-fb-btn button:after,
+.wi-fb.sending .wi-fb-btn .button:after {
+    display: block;
+    -webkit-animation: wifbspinner 2s infinite linear;
+    animation: wifbspinner 2s infinite linear;
 }
 
 @-webkit-keyframes wifbspinner {
@@ -131,14 +93,12 @@
     }
 }
 
+/* Messages */
+
 .wi-fb .wi-fb-msg-invalid,
-.wi-fb .wi-fb-msg-sending,
 .wi-fb .wi-fb-msg-sent,
 .wi-fb .wi-fb-msg-notsent {
     display: none;
-    margin: 1em 0;
-    font-size: 1.25em;
-    color: #00aff0;
 }
 
 .wi-fb .wi-fb-msg-invalid,
@@ -146,8 +106,7 @@
     color: #f26d7d;
 }
 
-
-/* Форма не прошла валидацию */
+/* Invalid Form */
 
 .wi-fb.invalid input:invalid,
 .wi-fb.invalid select:invalid,
@@ -159,64 +118,126 @@
     display: block;
 }
 
-
-/* Во время отправки сообщения */
-
-.wi-fb.sending .wi-fb-btn {
-    display: none;
-}
-
-.wi-fb.sending .wi-fb-spinner {
-    display: block;
-    -webkit-animation: wifbspinner 2s infinite linear;
-    animation: wifbspinner 2s infinite linear;
-}
-
-.wi-fb.sending .wi-fb-msg-sending {
-    display: block;
-}
-
-
-/* Сообщение отправлено */
+/* Sent */
 
 .wi-fb.sent .wi-fb-msg-sent {
     display: block;
 }
 
-
-/* Сообщение не отправлено */
+/* Not Sent */
 
 .wi-fb.notsent .wi-fb-msg-notsent {
     display: block;
 }
 
+/* Theme */
 
-/* Анимации */
-
-.mfp-fade.mfp-bg {
-    opacity: 0;
-    -webkit-transition: all 0.15s ease-out;
-    transition: all 0.15s ease-out;
+.wi-fb.wi-fb-theme > * {
+    text-align: center;
 }
 
-.mfp-fade.mfp-bg.mfp-ready {
-    opacity: 0.8;
+.wi-fb.wi-fb-theme {
+    font-size: 14px;
+    color: #000;
 }
 
-.mfp-fade.mfp-bg.mfp-removing {
-    opacity: 0;
+.wi-fb.wi-fb-theme .wi-fb-title {
+    margin: 0 0 1.5em 0;
+    padding: 0 0 1em 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.mfp-fade.mfp-wrap .mfp-content {
-    opacity: 0;
-    -webkit-transition: all 0.15s ease-out;
-    transition: all 0.15s ease-out;
+.wi-fb.wi-fb-theme .wi-fb-title h2,
+.wi-fb.wi-fb-theme .wi-fb-title .h2,
+.wi-fb.wi-fb-theme .wi-fb-title h3,
+.wi-fb.wi-fb-theme .wi-fb-title .h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    font-weight: normal;
 }
 
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-    opacity: 1;
+.wi-fb.wi-fb-theme .wi-fb-text {
+    margin: 0 0 1.5em 0;
+    padding: 0;
 }
 
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-    opacity: 0;
+.wi-fb.wi-fb-theme .wi-fb-text p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #000;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-line {
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-line label {
+    display: block;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-line input,
+.wi-fb.wi-fb-theme .wi-fb-line select,
+.wi-fb.wi-fb-theme .wi-fb-line textarea {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 300px;
+    height: 40px;
+    margin: 0;
+    padding: 4px 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 0;
+    background: #fff;
+    font-size: 1em;
+    outline: none;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-line textarea {
+    height: 120px;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-btn {
+    margin: 2em 0 1em 0;
+    padding: 0;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-btn button,
+.wi-fb.wi-fb-theme .wi-fb-btn .button {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 200px;
+    margin: 0;
+    padding: 10px 0;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: background-color .25s;
+    transition: background-color .25s;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-btn button:hover,
+.wi-fb.wi-fb-theme .wi-fb-btn .button:hover {
+    background: #444;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-msg-invalid,
+.wi-fb.wi-fb-theme .wi-fb-msg-sent,
+.wi-fb.wi-fb-theme .wi-fb-msg-notsent {
+    margin: 1em 0;
+    font-size: 1.25em;
+}
+
+.wi-fb.wi-fb-theme .wi-fb-msg-sent {
+    color: #7952b3;
 }

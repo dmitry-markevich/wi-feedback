@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -13,46 +13,107 @@
 
     <script>
         $(document).ready(function() {
+            
             $('#popup1').wiFeedBack({
                 fbScript: 'blocks/wi-feedback.php',
-                fbLink: '.wi-fb-link1',
-                fbColor: 'green'
+                fbLink: '.wi-fb-link1'
             });
+            
             $('#popup2').wiFeedBack({
                 fbScript: 'blocks/wi-feedback.php',
                 fbLink: '.wi-fb-link2',
                 fbColor: 'red'
             });
+            
+            $('#popup3').wiFeedBack({
+                fbScript: 'blocks/wi-feedback.php',
+                fbLink: '.wi-fb-link3',
+                fbColor: 'green'
+            });
+            
+            $('#popup4').wiFeedBack({
+                fbScript: 'blocks/wi-feedback.php',
+                fbLink: '.wi-fb-link4',
+                fbColor: false,
+                fbTheme: false
+            });
+            
+            $('#popup5').wiFeedBack({
+                fbScript: 'blocks/wi-feedback.php',
+                fbLink: false,
+                fbColor: 'blue'
+            });
         });
-
     </script>
 
-    <span class="wi-fb-link1" data-wi-fb-info="Кнопка 1">Клик 1!</span>
-    <span class="wi-fb-link2" data-wi-fb-info="Кнопка 2">Клик 2!</span>
+    <div class="ac">
 
-    <div style="display:none">
-        <div id="popup1">
-            <h2>Заказать консультацию 1</h2>
-            <h3>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</h3>
-            <input type="text" maxlength="50" data-wi-fb-caption="Имя" placeholder="Ваше Имя..." />
-            <input type="tel" maxlength="50" data-wi-fb-caption="Телефон" placeholder="Ваш Телефон..." required />
-            <input type="email" maxlength="50" data-wi-fb-caption="Почта" placeholder="Ваш E-mail..." />
-            <textarea maxlength="500" data-wi-fb-caption="Сообщение" placeholder="Сообщение..."></textarea>
+        <p><button class="wi-fb-link1" data-label="Стандартная форма">Стандартная форма</button></p>
+        <p><button class="wi-fb-link2" data-label="Форма с вложением">Форма с вложением</button></p>
+        <p><button class="wi-fb-link3" data-label="Форма с названиями полей">Форма с названиями полей</button></p>
+        <p><button class="wi-fb-link4" data-label="Форма без оформления">Форма без оформления</button></p>
+
+        <hr>
+
+        <div id="popup5">
+            <h2>Форма на странице</h2>
+            <p>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</p>
+            <input type="text" maxlength="50" name="Имя" placeholder="Ваше Имя..." />
+            <input type="tel" maxlength="50" name="Телефон" placeholder="Ваш Телефон..." required />
+            <input type="email" maxlength="50" name="Почта" placeholder="Ваш E-mail..." />
+            <textarea maxlength="500" name="Сообщение" placeholder="Сообщение..."></textarea>
             <button>Перезвоните мне</button>
         </div>
+
     </div>
 
-    <div style="display:none">
-        <div id="popup2">
-            <h2>Заказать консультацию 2</h2>
-            <h3>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</h3>
-            <input type="text" maxlength="50" data-wi-fb-caption="Имя" placeholder="Ваше Имя..." />
-            <input type="tel" maxlength="50" data-wi-fb-caption="Телефон" placeholder="Ваш Телефон..." required />
-            <input type="email" maxlength="50" data-wi-fb-caption="Почта" placeholder="Ваш E-mail..." />
-            <textarea maxlength="500" data-wi-fb-caption="Сообщение" placeholder="Сообщение..."></textarea>
-            <button>Перезвоните мне</button>
-        </div>
+    <div id="popup1">
+        <h2>Стандартная форма</h2>
+        <p>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</p>
+        <input type="text" maxlength="50" name="Имя" placeholder="Ваше Имя..." />
+        <input type="tel" maxlength="50" name="Телефон" placeholder="Ваш Телефон..." required />
+        <input type="email" maxlength="50" name="Почта" placeholder="Ваш E-mail..." />
+        <textarea maxlength="500" name="Сообщение" placeholder="Сообщение..."></textarea>
+        <button>Перезвоните мне</button>
     </div>
+
+    <div id="popup2">
+        <h2>Форма с вложением</h2>
+        <p>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</p>
+        <input type="text" maxlength="50" name="Имя" placeholder="Ваше Имя..." />
+        <input type="tel" maxlength="50" name="Телефон" placeholder="Ваш Телефон..." required />
+        <input type="email" maxlength="50" name="Почта" placeholder="Ваш E-mail..." />
+        <input type="file" name="Вложение">
+        <textarea maxlength="500" name="Сообщение" placeholder="Сообщение..."></textarea>
+        <button>Перезвоните мне</button>
+    </div>
+
+    <div id="popup3">
+        <h2>Форма с названиями полей</h2>
+        <p>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</p>
+        <input type="text" maxlength="50" name="Имя" data-label="Ваше Имя:" />
+        <input type="tel" maxlength="50" name="Телефон" data-label="Ваш Телефон:" required />
+        <input type="email" maxlength="50" name="Почта" data-label="Ваш E-mail:" />
+        <textarea maxlength="500" name="Сообщение" data-label="Сообщение:"></textarea>
+        <button>Перезвоните мне</button>
+    </div>
+
+    <div id="popup4">
+        <h2>Форма без оформления</h2>
+        <p>Заполните контактные данные, и мы свяжемся с вами в кратчайшие сроки:</p>
+        <input type="text" maxlength="50" name="Имя" placeholder="Ваше Имя..." />
+        <input type="tel" maxlength="50" name="Телефон" placeholder="Ваш Телефон..." required />
+        <input type="email" maxlength="50" name="Почта" placeholder="Ваш E-mail..." />
+        <textarea maxlength="500" name="Сообщение" placeholder="Сообщение..."></textarea>
+        <button>Перезвоните мне</button>
+    </div>
+
+    <style>
+        .ac {
+            text-align: center;
+        }
+
+    </style>
 
 </body>
 

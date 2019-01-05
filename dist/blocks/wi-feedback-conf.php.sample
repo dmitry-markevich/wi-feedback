@@ -1,5 +1,5 @@
 <?php
-//banner//
+/* wi-feedback - v0.3.006 */
 
 $mail_addr  = 'to@test.by';                         // Получатель заявок с сайта
 $mail_topic = 'Поступила заявка с сайта test.by';   // Тема письма с заявкой

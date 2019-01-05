@@ -6,12 +6,11 @@ module.exports = function (grunt) {
 
         cssmin: {
             options: {
-                sourceMap: true,
-                banner: '/* <%= pkg.name %> - v<%= pkg.version %> */'
+                sourceMap: true
             },
             target: {
                 files: {
-                    'dist/wi-feedback.min.css': [
+                    'dist/css/wi-feedback.min.css': [
                         'libs/mfp/magnific-popup.css',
                         'src/wi-feedback.css'
                     ],
@@ -25,12 +24,11 @@ module.exports = function (grunt) {
 
         uglify: {
             options: {
-                sourceMap: true,
-                banner: '/* <%= pkg.name %> - v<%= pkg.version %> */'
+                sourceMap: true
             },
             target: {
                 files: {
-                    'dist/wi-feedback.min.js': [
+                    'dist/js/wi-feedback.min.js': [
                         'libs/mfp/jquery.magnific-popup.js',
                         'src/wi-feedback.js'
                     ],
@@ -43,14 +41,25 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            php_dist: {
+            target: {
                 files: {
-                    'dist/blocks/wi-feedback.php': ['src/wi-feedback.php']
+                    'dist/blocks/wi-feedback.php': ['src/wi-feedback.php'],
+                    'dist/blocks/wi-feedback-conf.php.sample': ['src/wi-feedback-conf.php'],
+                    'demo/blocks/wi-feedback.php': ['src/wi-feedback.php'],
+                    'demo/blocks/wi-feedback-conf.php': ['src/wi-feedback-conf.php']
                 }
-            },
-            php_demo: {
+            }
+        },
+
+        usebanner: {
+            target: {
+                options: {
+                    position: 'replace',
+                    replace: '//banner//',
+                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> */'
+                },
                 files: {
-                    'demo/blocks/wi-feedback.php': ['src/wi-feedback.php']
+                    src: ['dist/**/*']
                 }
             }
         },
@@ -59,9 +68,9 @@ module.exports = function (grunt) {
             options: {
                 spawn: false,
             },
-            all: {
+            target: {
                 files: 'src/**/*',
-                tasks: ['cssmin', 'uglify', 'concat']
+                tasks: ['cssmin', 'uglify', 'concat', 'usebanner']
             }
         }
 
@@ -70,7 +79,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['cssmin', 'uglify', 'concat']);
+    grunt.registerTask('default', ['cssmin', 'uglify', 'concat', 'usebanner']);
 }
