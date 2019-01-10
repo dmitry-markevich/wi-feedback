@@ -5,9 +5,6 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         cssmin: {
-            options: {
-                sourceMap: true
-            },
             target: {
                 files: {
                     'dist/css/wi-feedback.min.css': [
@@ -23,9 +20,6 @@ module.exports = function (grunt) {
         },
 
         uglify: {
-            options: {
-                sourceMap: true
-            },
             target: {
                 files: {
                     'dist/js/wi-feedback.min.js': [
@@ -59,7 +53,7 @@ module.exports = function (grunt) {
                     banner: '/* <%= pkg.name %> - v<%= pkg.version %> */'
                 },
                 files: {
-                    src: ['dist/**/*']
+                    src: ['dist/**/*.{css,js,php}']
                 }
             }
         },
