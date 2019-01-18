@@ -17,7 +17,7 @@ switch ($_REQUEST['action']) {
 function fbSendMail() {
     
     include('wi-feedback-conf.php');
-
+    
     $mail_headers = "MIME-Version: 1.0\r\n";
     $mail_headers .= "Content-Type: text/plain; charset=UTF-8;\r\n";
     $mail_headers .= $mail_from ? "From: ".$mail_from."\r\n" : '';
@@ -40,13 +40,23 @@ function fbSendMail() {
             }
         }
     }
-
-    if ($fieldsNum > 0) {
-        file_put_contents(__DIR__.'/wi-feedback.log', date('Y.m.d H:i:s')."\n".$mail_text."\r\n", FILE_APPEND);
-        $result = mail($mail_addr, '=?UTF-8?B?'.base64_encode($mail_topic).'?=', $mail_text, $mail_headers);
+    
+    if ($recaptcha_secret != '') {
+        require_once('recaptcha/autoload.php');
+        $recaptcha = new \ReCaptcha\ReCaptcha($recaptcha_secret);
+        $resp = $recaptcha->verify($_REQUEST['rct']);
+        $recaptchaPassed = $resp->isSuccess();
+        $mail_text .= "reCAPTCHA: ".($recaptchaPassed ? 'пройдено' : 'не пройдено')."\n";
+    }
+    
+    file_put_contents(__DIR__.'/wi-feedback.log', date('Y.m.d H:i:s')."\n".$mail_text."\r\n", FILE_APPEND);
+    
+    if (isset($recaptcha) and !$recaptchaPassed) {
+        echo 'reCAPTCHA failed';
+        return;
     }
 
-    echo $result;
+    echo mail($mail_addr, '=?UTF-8?B?'.base64_encode($mail_topic).'?=', $mail_text, $mail_headers);
 }
 
 // File

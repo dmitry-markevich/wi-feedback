@@ -1,6 +1,6 @@
 {
   "name": "wi-feedback",
-  "version": "0.3.007",
+  "version": "0.4.001",
   "description": "Feedback Form",
   "main": "demo/index.html",
   "scripts": {
@@ -23,6 +23,7 @@
     "grunt": "^1.0.3",
     "grunt-banner": "^0.6.0",
     "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0"

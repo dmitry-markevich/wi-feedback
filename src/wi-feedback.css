@@ -59,8 +59,8 @@
     padding-right: 2em;
 }
 
-.wi-fb .wi-fb-btn button:after,
-.wi-fb .wi-fb-btn .button:after {
+.wi-fb .wi-fb-btn button .wi-fb-spinner,
+.wi-fb .wi-fb-btn .button .wi-fb-spinner {
     content: '';
     position: absolute;
     left: 0.5em;
@@ -72,8 +72,8 @@
     background-size: contain;
 }
 
-.wi-fb.sending .wi-fb-btn button:after,
-.wi-fb.sending .wi-fb-btn .button:after {
+.wi-fb.sending .wi-fb-btn button .wi-fb-spinner,
+.wi-fb.sending .wi-fb-btn .button .wi-fb-spinner {
     display: block;
     -webkit-animation: wifbspinner 2s infinite linear;
     animation: wifbspinner 2s infinite linear;
