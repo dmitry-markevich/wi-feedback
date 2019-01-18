@@ -1,5 +1,5 @@
 <?php
-/* wi-feedback - v 0.3.010 */
+/* wi-feedback - v 0.4.002 */
 
 // Action
 switch ($_REQUEST['action']) {

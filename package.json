@@ -1,6 +1,6 @@
 {
   "name": "wi-feedback",
-  "version": "0.4.001",
+  "version": "0.4.002",
   "description": "Feedback Form",
   "main": "demo/index.html",
   "scripts": {
